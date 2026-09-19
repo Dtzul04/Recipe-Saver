@@ -31,17 +31,25 @@ export async function GET(request: Request) {
 }
 
 export async function POST(request: Request) {
-    const body = await request.json();
-    const title = body.title;
-    const description = body.description;
-    const ingredients = body.ingredients;
-    const instructions = body.instructions;
-    const prep_time_minutes = body.prep_time_minutes;
+    try {
+        const body = await request.json();
+        const title = body.title;
+        const description = body.description;
+        const ingredients = body.ingredients;
+        const instructions = body.instructions;
+        const prep_time_minutes = body.prep_time_minutes;
 
-    const result = await pool.query<Recipe>(
-        "INSERT INTO recipes (title, description, ingredients, instructions, prep_time_minutes) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-        [title, description, ingredients, instructions, prep_time_minutes]
-    );
-    
-    return NextResponse.json(result.rows[0], { status: 201 });
+        const result = await pool.query<Recipe>(
+            "INSERT INTO recipes (title, description, ingredients, instructions, prep_time_minutes) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+            [title, description, ingredients, instructions, prep_time_minutes]
+        );
+
+        return NextResponse.json(result.rows[0], { status: 201 });
+    } catch (error) {
+        console.error(error);
+        return NextResponse.json(
+            { error: "Failed to create recipe" },
+            { status: 500 }
+        );
+    }
 }
