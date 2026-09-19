@@ -8,7 +8,7 @@ The point of the project is CRUD + REST APIs with Next.js, TypeScript, PostgreSQ
 
 - Next.js (App Router, API routes — no Express)
 - TypeScript (typed `Recipe`, no `any`)
-- PostgreSQL
+- PostgreSQL (hosted on Supabase; same SQL as local)
 - React (`useState`, `useEffect`, controlled forms)
 - Tailwind CSS
 - Git (small commits, clean messages)
@@ -62,23 +62,23 @@ lib/
   types.ts                      # Recipe interface
 ```
 
-Those `app/recipes`, `app/api`, and `lib` files are the plan. They are not created yet.
+`lib/db.ts` and `lib/types.ts` connect the app to Postgres. The recipe pages and API routes are still the plan.
 
 ## Setup
 
-1. Install Node.js and PostgreSQL.
-2. Install packages: `npm install`
-3. Create a `.env` file:
-   `DATABASE_URL=postgresql://USER:PASSWORD@localhost:5432/recipe_saver`
-4. Create the database and run the schema SQL.
-5. Start the app: `npm run dev`
-6. Open `http://localhost:3000`
+1. Create a free project at [supabase.com](https://supabase.com).
+2. Copy the database URI: Project Settings → Database → Connect → URI (Session pooler).
+3. Put it in `.env` as `DATABASE_URL=...` (see `.env.example`). Never commit `.env`.
+4. In the Supabase SQL Editor, run `schema.sql`.
+5. Install packages: `npm install`
+6. Start the app: `npm run dev`
+7. Open `http://localhost:3000`
 
 ## Build order
 
-1. Next.js + TypeScript + Tailwind running
-2. Postgres table + a couple of manual inserts
-3. `lib/db.ts` and `Recipe` type
+1. Next.js + TypeScript + Tailwind running ✔️
+2. Postgres table + a couple of manual inserts (local or Supabase SQL Editor) ✔️
+3. `lib/db.ts` and `Recipe` type (connect with `DATABASE_URL`) ✔️
 4. API: list + create
 5. API: get one, update, delete
 6. UI: list + detail
