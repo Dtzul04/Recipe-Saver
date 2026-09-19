@@ -86,8 +86,5 @@ Those `app/recipes`, `app/api`, and `lib` files are the plan. They are not creat
 8. UI: edit + delete
 9. Search `?q=`
 
-## Where we stopped
-
-Step 1 is done. The Next.js app runs, TypeScript and Tailwind are set up, and PostgreSQL 16 is installed.
 
 Next session: create the `recipe_saver` database and the `recipes` table.
