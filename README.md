@@ -62,8 +62,6 @@ lib/
   types.ts                      # Recipe interface
 ```
 
-`lib/db.ts` and `lib/types.ts` connect the app to Postgres. The recipe pages and API routes are still the plan.
-
 ## Setup
 
 1. Create a free project at [supabase.com](https://supabase.com).
@@ -79,7 +77,7 @@ lib/
 1. Next.js + TypeScript + Tailwind running ✔️
 2. Postgres table + a couple of manual inserts (local or Supabase SQL Editor) ✔️
 3. `lib/db.ts` and `Recipe` type (connect with `DATABASE_URL`) ✔️
-4. API: list + create
+4. API: list + create ✔️
 5. API: get one, update, delete
 6. UI: list + detail
 7. UI: create form
