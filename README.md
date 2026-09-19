@@ -86,5 +86,11 @@ Those `app/recipes`, `app/api`, and `lib` files are the plan. They are not creat
 8. UI: edit + delete
 9. Search `?q=`
 
+## Author
 
-Next session: create the `recipe_saver` database and the `recipes` table.
+Daniel Tzul
+
+## License
+
+MIT. See `LICENSE`.
+
