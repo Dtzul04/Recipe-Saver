@@ -41,8 +41,8 @@ One table first. Not adding extra tables.
 | Method | Path | Purpose |
 |---|---|---|
 | `GET` | `/api/recipes` | list recipes |
-| `GET` | `/api/recipes?q=pasta` | search by title |
 | `POST` | `/api/recipes` | create |
+| `GET` | `/api/recipes?q=pasta` | search by title |
 | `GET` | `/api/recipes/[id]` | get one |
 | `PUT` | `/api/recipes/[id]` | update |
 | `DELETE` | `/api/recipes/[id]` | delete |
@@ -55,8 +55,8 @@ app/
   recipes/new/page.tsx          # create form
   recipes/[id]/page.tsx         # detail
   recipes/[id]/edit/page.tsx    # edit form
-  api/recipes/route.ts          # GET list, POST create
   api/recipes/[id]/route.ts     # GET one, PUT, DELETE
+  api/recipes/route.ts          # GET list, POST create
 lib/
   db.ts                         # Postgres connection
   types.ts                      # Recipe interface
@@ -78,7 +78,7 @@ lib/
 2. Postgres table + a couple of manual inserts (local or Supabase SQL Editor) ✔️
 3. `lib/db.ts` and `Recipe` type (connect with `DATABASE_URL`) ✔️
 4. API: list + create ✔️
-5. API: get one, update, delete
+5. API: get one, update, delete ✔️
 6. UI: list + detail
 7. UI: create form
 8. UI: edit + delete
