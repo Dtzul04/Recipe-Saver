@@ -51,15 +51,15 @@ One table first. Not adding extra tables.
 
 ```text
 app/
-  page.tsx                      # list recipes
-  recipes/new/page.tsx          # create form
-  recipes/[id]/page.tsx         # detail
-  recipes/[id]/edit/page.tsx    # edit form
-  api/recipes/[id]/route.ts     # GET one, PUT, DELETE
-  api/recipes/route.ts          # GET list, POST create
+  page.tsx                      # list (layout done; still hardcoded)
+  recipes/new/page.tsx          # create form — not created yet
+  recipes/[id]/page.tsx         # detail — not created yet
+  recipes/[id]/edit/page.tsx    # edit form — not created yet
+  api/recipes/route.ts          # GET list/search, POST create ✔️
+  api/recipes/[id]/route.ts     # GET one, PUT, DELETE ✔️
 lib/
-  db.ts                         # Postgres connection
-  types.ts                      # Recipe interface
+  db.ts                         # Postgres connection ✔️
+  types.ts                      # Recipe interface ✔️
 ```
 
 ## Setup
@@ -79,10 +79,10 @@ lib/
 3. `lib/db.ts` and `Recipe` type (connect with `DATABASE_URL`) ✔️
 4. API: list + create ✔️
 5. API: get one, update, delete ✔️
-6. UI: list + detail
-7. UI: create form
-8. UI: edit + delete
-9. Search `?q=`
+6. UI: list + detail — list layout only; still need fetch + detail page
+7. UI: create form (`/recipes/new`)
+8. UI: edit + delete (`/recipes/[id]/edit`)
+9. Search on the list page (API `?q=` already works)
 
 ## Author
 
