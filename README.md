@@ -4,6 +4,8 @@ Save recipes by creating, editing, deleting, and searching.
 
 The point of the project is CRUD + REST APIs with Next.js, TypeScript, PostgreSQL, and Tailwind.
 
+**Live demo:** [recipe-saver-alpha.vercel.app](https://recipe-saver-alpha.vercel.app)
+
 ## Stack
 
 - Next.js (App Router, API routes — no Express)
