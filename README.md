@@ -20,7 +20,7 @@ The point of the project is CRUD + REST APIs with Next.js, TypeScript, PostgreSQ
 - Create a recipe
 - Edit a recipe
 - Delete a recipe
-- Search/filter by title (`?q=`)
+- Search by title in the API (`?q=`) — list search UI later
 
 ## Database
 
@@ -51,10 +51,10 @@ One table first. Not adding extra tables.
 
 ```text
 app/
-  page.tsx                      # list (layout done; still hardcoded)
-  recipes/new/page.tsx          # create form — not created yet
-  recipes/[id]/page.tsx         # detail — not created yet
-  recipes/[id]/edit/page.tsx    # edit form — not created yet
+  page.tsx                      # list ✔️
+  recipes/new/page.tsx          # create form ✔️
+  recipes/[id]/page.tsx         # detail ✔️
+  recipes/[id]/edit/page.tsx    # edit + delete ✔️
   api/recipes/route.ts          # GET list/search, POST create ✔️
   api/recipes/[id]/route.ts     # GET one, PUT, DELETE ✔️
 lib/
@@ -79,10 +79,10 @@ lib/
 3. `lib/db.ts` and `Recipe` type (connect with `DATABASE_URL`) ✔️
 4. API: list + create ✔️
 5. API: get one, update, delete ✔️
-6. UI: list + detail — list layout only; still need fetch + detail page
-7. UI: create form (`/recipes/new`)
-8. UI: edit + delete (`/recipes/[id]/edit`)
-9. Search on the list page (API `?q=` already works)
+6. UI: list + detail ✔️
+7. UI: create form (`/recipes/new`) ✔️
+8. UI: edit + delete (`/recipes/[id]/edit`) ✔️
+9. Search on the list page (API ready; UI later)
 
 ## Author
 
